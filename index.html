@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>श्रद्धा ❤️ नृसिंह - विवाह निमंत्रण</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold:#c8920a; --gold-light:#e8b84b; --gold-pale:#f7e8c0;
+  --gold-deep:#8b6200; --cream:#fdf6ec; --cream-deep:#f5e6c8;
+  --burgundy:#6b1a2a; --text-dark:#2a1a0e; --text-mid:#5c3d20;
+  --text-light:#9a7850;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Serif Devanagari',serif;
+  background:var(--cream);
+  color:var(--text-dark);
+  overflow-x:hidden;
+}
+#petal-layer{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.petal{position:absolute;top:-60px;font-size:18px;opacity:0;animation:fall linear infinite}
+@keyframes fall{
+  0%{transform:translateY(0) rotate(0deg);opacity:0}
+  5%{opacity:.8}
+  90%{opacity:.6}
+  100%{transform:translateY(105vh) rotate(720deg) translateX(80px);opacity:0}
+}
+#door-wrap{
+  position:fixed;inset:0;z-index:9999;display:flex;align-items:center;
+  justify-content:center;overflow:hidden;
+}
+.door-panel{
+  position:absolute;width:50%;height:100%;
+  background:linear-gradient(160deg,#7a4a0a,#c8920a 40%,#8b6200 70%,#5a3500);
+  transition:transform 3.5s cubic-bezier(.76,0,.24,1);overflow:hidden;
+}
+.door-left{left:0;border-right:3px solid #f7d070}
+.door-right{right:0;border-left:3px solid #f7d070}
+.door-left.open{transform:translateX(-100%)}
+.door-right.open{transform:translateX(100%)}
+.door-border{position:absolute;inset:14px;border:1.5px solid rgba(247,208,112,.5)}
+.door-ornament{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:16px;padding:40px;
+}
+.door-flower{font-size:42px;animation:sway 3s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+.door-center{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  text-align:center;color:#fff9e8;z-index:10000;white-space:nowrap;
+}
+.door-center h1{font-size:clamp(1.8rem,5vw,3.4rem);margin-bottom:8px}
+.door-center h2{font-weight:400;font-size:clamp(1rem,3vw,1.5rem);letter-spacing:.12em}
+.door-center p{font-size:clamp(.85rem,2vw,1.1rem);opacity:.8;margin-bottom:24px}
+.door-divider{width:100px;height:1px;background:linear-gradient(90deg,transparent,#f7d070,transparent);margin:14px auto}
+.open-btn{
+  padding:14px 36px;background:transparent;border:1.5px solid #f7d070;color:#fff9e8;
+  font-family:inherit;font-size:1rem;letter-spacing:.12em;cursor:pointer;transition:.35s;
+}
+.open-btn:hover{background:rgba(247,208,112,.15)}
+.hero{
+  min-height:100vh;background:
+  linear-gradient(to bottom,rgba(42,26,14,.72),rgba(42,26,14,.3),rgba(42,26,14,.75)),
+  url('download (2).jpg') center/cover no-repeat;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:40px 20px;position:relative;
+}
+.hero-eyebrow{font-size:.9rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px}
+.hero-names{
+  font-family:'Playfair Display','Noto Serif Devanagari',serif;
+  font-size:clamp(3rem,10vw,7rem);color:#fff9e8;line-height:1.08;
+  text-shadow:0 4px 30px rgba(0,0,0,.6);
+}
+.hero-names span{color:var(--gold-light);font-size:.45em;display:block;margin:6px 0}
+.hero-date{font-size:clamp(1rem,3vw,1.4rem);color:rgba(255,249,232,.8);letter-spacing:.14em;margin-top:22px}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);color:rgba(255,249,232,.6);font-size:.75rem;letter-spacing:.2em}
+.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,#f7d070,transparent);margin:0 auto 8px}
+.section{padding:90px 24px;position:relative}
+.sec-label{font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px}
+.sec-title{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15}
+.invite-wrap,.venue-inner{max-width:760px;margin:0 auto;text-align:center}
+.invite-card,.venue-card{
+  background:linear-gradient(160deg,#fffdf5,#fef3d6);border:1px solid var(--gold-light);
+  padding:55px 42px;position:relative;box-shadow:0 20px 80px rgba(139,98,0,.12);
+}
+.invite-corner{position:absolute;font-size:28px;opacity:.5}
+.tl{top:20px;left:20px}.tr{top:20px;right:20px}.bl{bottom:20px;left:20px}.br{bottom:20px;right:20px}
+.invite-salutation{letter-spacing:.18em;text-transform:uppercase;color:var(--text-light);margin-bottom:18px}
+.invite-names{font-size:clamp(2.2rem,6vw,4rem);color:var(--burgundy);line-height:1.15}
+.ampersand{color:var(--gold);display:block;font-size:.75em}
+.invite-body{font-size:1.08rem;line-height:1.9;color:var(--text-mid);margin:20px 0}
+.ornament-line{display:flex;align-items:center;gap:12px;margin:18px 0}
+.ornament-line:before,.ornament-line:after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-light),transparent)}
+.ornament-diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+.invite-detail-row{display:flex;justify-content:center;gap:44px;flex-wrap:wrap;margin-top:30px;padding-top:24px;border-top:1px solid rgba(200,146,10,.2)}
+.label{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block}
+.value{font-size:1.08rem}
+.countdown-section{
+  background:linear-gradient(135deg,var(--burgundy),#3e0e1a);padding:80px 24px;text-align:center;color:#fff9e8;
+}
+.countdown-grid{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-top:40px}
+.time-number{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,5.5rem);color:var(--gold-light);min-width:100px}
+.time-label{font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(247,208,112,.65)}
+.time-colon{font-size:4rem;color:rgba(247,208,112,.35)}
+.events-section,.venue-section{background:var(--cream-deep)}
+.events-grid{
+  max-width:900px;margin:40px auto 0;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;
+}
+.event-card{background:var(--cream);border:1px solid var(--gold-light);padding:36px 28px;text-align:center}
+.event-icon{font-size:2.2rem;margin-bottom:14px;display:block}
+.event-badge{display:inline-block;padding:4px 14px;background:var(--gold-pale);color:var(--gold-deep);font-size:.75rem;letter-spacing:.14em;margin-bottom:14px}
+.event-name,.venue-name{font-size:1.8rem;color:var(--burgundy);margin-bottom:12px}
+.event-info,.venue-address{font-size:1rem;color:var(--text-mid);line-height:1.8}
+
+.couple-section{
+    padding:70px 20px;
+}
+.section-title{
+    text-align:center;
+    font-size:70px;
+    font-family:'Cormorant Garamond',serif;
+    color:#733d3d;
+}
+.line{
+    width:80px;
+    height:2px;
+    background:#d6b16d;
+    margin:15px auto 60px;
+}
+.couple-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.card{
+    flex:1;
+    min-width:350px;
+    max-width:550px;
+    background:#f8f5f1;
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 2px 15px rgba(0,0,0,.04);
+}
+.image-box{
+    position:relative;
+    width:280px;
+    height:280px;
+    margin:auto;
+}
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #d6b16d;
+}
+.tag{
+    position:absolute;
+    bottom:-12px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    padding:8px 22px;
+    border-radius:30px;
+    font-size:15px;
+}
+.bride{background:#d6b16d}
+.groom{background:#733d3d}
+.name{
+    margin-top:35px;
+    font-size:50px;
+    font-family:'Cormorant Garamond',serif;
+    color:#733d3d;
+}
+.desc{
+    margin-top:15px;
+    font-size:18px;
+    line-height:1.8;
+    color:#8b6666;
+}
+
+.squad-section{
+    padding:80px 20px;
+}
+.title{
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:68px;
+    color:#6d3636;
+}
+.subtitle{
+    text-align:center;
+    color:#9a6f63;
+    font-size:18px;
+    margin-bottom:60px;
+}
+.squad-container{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:40px;
+}
+.team-box{
+    background:#fbf9f6;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.03);
+}
+.team-title{
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:40px;
+    color:#6d3636;
+    margin-bottom:30px;
+}
+.members{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:22px;
+}
+.member{
+    background:#f1e8e5;
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+}
+.member img{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #d5b16a;
+    margin-bottom:15px;
+}
+.member h3{
+    color:#7b4343;
+    font-size:18px;
+    font-weight:500;
+}
+.member p{
+    color:#a06f62;
+    font-size:14px;
+}
+
+.cta-btn{
+  display:inline-flex;align-items:center;gap:8px;padding:14px 34px;text-decoration:none;
+  color:var(--gold-deep);border:1px solid var(--gold);letter-spacing:.12em;text-transform:uppercase;
+}
+.cta-btn:hover{background:var(--gold-pale)}
+footer{
+  background:linear-gradient(160deg,#2a1a0e,#1a0a06);color:rgba(255,249,232,.65);
+  text-align:center;padding:60px 24px;
+}
+.footer-names{font-size:2.2rem;color:var(--gold-light)}
+.footer-heart{display:block;font-size:1.4rem;margin:14px 0}
+.footer-date{font-size:.85rem;letter-spacing:.2em}
+.reveal-on-scroll{transform:translateY(45px);opacity:0;transition:all .9s cubic-bezier(.16,1,.3,1)}
+.reveal-on-scroll.visible{transform:translateY(0);opacity:1}
+
+/* म्युझिक कंट्रोलर बटण (Floating Music Button) */
+.music-control {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+  background: var(--burgundy);
+  color: #fff9e8;
+  border: 1px solid var(--gold);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.music-control:hover {
+  transform: scale(1.1);
+}
+
+@media(max-width:768px){
+  .section-title{font-size:50px}
+  .name{font-size:42px}
+  .image-box{width:220px;height:220px}
+  .card{min-width:100%;padding:30px 20px}
+  .title{font-size:50px}
+  .time-colon{display:none}
+}
+</style>
+</head>
+
+<body>
+<div id="petal-layer"></div>
+
+<audio id="bg-music" src="WhatsApp Audio 2026-06-05 at 6.16.29 PM.mp3" loop></audio>
+
+<button class="music-control" id="music-btn" onclick="toggleMusic()" style="display:none;">🎵</button>
+
+<div id="door-wrap">
+  <div class="door-panel door-left" id="dl">
+    <div class="door-border"></div>
+    <div class="door-ornament">
+      <div class="door-flower">🌸</div>
+      <div class="door-flower">🌺</div>
+      <div class="door-flower">🌸</div>
+    </div>
+  </div>
+
+  <div class="door-panel door-right" id="dr">
+    <div class="door-border"></div>
+    <div class="door-ornament">
+      <div class="door-flower">🌺</div>
+      <div class="door-flower">🌸</div>
+      <div class="door-flower">🌺</div>
+    </div>
+  </div>
+
+  <div class="door-center">
+    <p>०४ जुलै २०२६</p>
+    <h1>विवाह निमंत्रण</h1>
+    <div class="door-divider"></div>
+    <h2>श्रद्धा आणि नृसिंह</h2>
+    <p>वेळ:१२:४३ दुपार, स्थळ:श्रद्धा मंगल कार्यालय</p>
+    <button class="open-btn" onclick="openDoors()">निमंत्रण उघडा</button>
+  </div>
+</div>
+
+<section class="hero">
+  <p class="hero-eyebrow">नव्या आयुष्याची सुंदर सुरुवात</p>
+  <h1 class="hero-names">
+    श्रद्धा
+    <span>✦ विवाह ✦</span>
+    नृसिंह
+  </h1>
+  
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>पुढे पाहा</span><br>
+    <span>(खाली स्क्रोल करा)</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="invite-wrap">
+    <span class="sec-label">आनंद आणि प्रेमाचे</span>
+    <h2 class="sec-title">आमंत्रण</h2>
+
+    <div class="invite-card reveal-on-scroll" id="main-card">
+      <span class="invite-corner tl">✿</span>
+      <span class="invite-corner tr">✿</span>
+      <span class="invite-corner bl">✿</span>
+      <span class="invite-corner br">✿</span>
+
+      <p class="invite-salutation">कुटुंबियांसह सस्नेह निमंत्रण</p>
+      <div class="ornament-line"><div class="ornament-diamond"></div></div>
+
+      <div class="invite-names">
+        श्रद्धा
+        <span class="ampersand">आणि</span>
+        नृसिंह
+      </div>
+
+      <p class="invite-body">
+        आपल्या शुभ उपस्थितीने<br>
+        आमच्या विवाह सोहळ्याची शोभा वाढवावी
+      </p>
+
+      <div class="ornament-line"><div class="ornament-diamond"></div></div>
+
+      <div class="invite-detail-row">
+        <div class="invite-detail">
+          <span class="label">दिनांक</span>
+          <span class="value">शनिवार, ०४ जुलै २०२६</span>
+        </div>
+        <div class="invite-detail">
+          <span class="label">शुभ मुहूर्त</span>
+          <span class="value">वेळ: १२:४३ दुपार</span>
+        </div>
+        <div class="invite-detail">
+          <span class="label">स्थळ</span>
+          <span class="value">श्रद्धा मंगल कार्यालय,परळी.वै</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="countdown-section">
+  <span class="sec-label">सोहळ्यासाठी उरलेला वेळ</span>
+  <h2 class="sec-title">काउंटडाउन</h2>
+
+  <div class="countdown-grid">
+    <div class="time-unit"><div class="time-number" id="days">00</div><div class="time-label">दिवस</div></div>
+    <div class="time-colon">:</div>
+    <div class="time-unit"><div class="time-number" id="hours">00</div><div class="time-label">तास</div></div>
+    <div class="time-colon">:</div>
+    <div class="time-unit"><div class="time-number" id="minutes">00</div><div class="time-label">मिनिटे</div></div>
+    <div class="time-colon">:</div>
+    <div class="time-unit"><div class="time-number" id="seconds">00</div><div class="time-label">सेकंद</div></div>
+  </div>
+</section>
+
+<section class="section events-section">
+  <div style="text-align:center;max-width:600px;margin:0 auto">
+    <span class="sec-label">दिनांक लक्षात ठेवा</span>
+    <h2 class="sec-title">कार्यक्रम</h2>
+  </div>
+
+  <div class="events-grid">
+    <div class="event-card reveal-on-scroll">
+      <span class="event-icon">🪔</span>
+      <span class="event-badge">पूर्व संध्या</span>
+      <div class="event-name">हळद समारंभ</div>
+      <p class="event-info">०३ जुलै २०२६<br>संध्याकाळ<br>श्रद्धा मंगल कार्यालय,परळी.वै</p>
+    </div>
+
+    <div class="event-card reveal-on-scroll">
+      <span class="event-icon">🌸</span>
+      <span class="event-badge">मुख्य सोहळा</span>
+      <div class="event-name">विवाह</div>
+      <p class="event-info">०४ जुलै २०२६<br>शुभ मुहूर्त १२:४३ दुपार<br>श्रद्धा मंगल कार्यालय,परळी.वै</p>
+    </div>
+
+    <div class="event-card reveal-on-scroll">
+      <span class="event-icon">🎶</span>
+      <span class="event-badge">आशिर्वाद</span>
+      <div class="event-name">आशिर्वाद आणि सुरुचीभोज</div>
+      <p class="event-info">०४ जुलै २०२६<br>विवाहा नंतर लगेचच...<br>श्रद्धा मंगल कार्यालय,परळी.वै</p>
+    </div>
+  </div>
+</section>
+
+<section class="couple-section">
+    <h1 class="section-title">The Couple</h1>
+    <div class="line"></div>
+
+    <div class="couple-container">
+        <div class="card">
+            <div class="image-box">
+                <img src="WhatsApp Image 2026-06-05 at 5.22.27 PM.jpeg" alt="Bride">
+                <span class="tag bride">The Bride</span>
+            </div>
+            <h2 class="name">चि.सौ.कां.श्रद्धा आदुडे</h2>
+            <p class="desc">
+                सौ भिमाबाई व श्री व्यंकटराव आदुडे यांची नात आणि सौ संगीता व श्री सुनील आदुडे रा. किनगाव ता. अहमदपूर जि. लातूर यांची सुकन्या.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="image-box">
+                <img src="WhatsApp Image 2026-06-05 at 4.40.01 PM.jpeg" alt="Groom">
+                <span class="tag groom">The Groom</span>
+            </div>
+            <h2 class="name">चि.नृसिंह शिंगाडे</h2>
+            <p class="desc">
+                कै.सुमनबाई व कै.बळीराम शिंगाडे यांचे नातू आणि सौ. अनिता व श्री मधुकर शिंगाडे रा.डिघोळ( ई.) यांचे चिरंजीव.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="squad-section">
+    <h1 class="title">Our Squad</h1>
+    <div class="line"></div>
+    <p class="subtitle">The wonderful people standing by our side</p>
+
+    <div class="squad-container">
+        <div class="team-box">
+            <h2 class="team-title">Team Bride 👰</h2>
+            <div class="members">
+                <div class="member"><img src="WhatsApp Image 2026-06-05 at 3.19.05 PM.jpeg"><h3>Shrinath</h3><p>Brother</p></div>
+                <div class="member"><img src="WhatsApp Image 2026-06-05 at 2.36.05 PM.jpeg"><h3>Vidya</h3><p>Sister</p></div>
+                <div class="member"><img src="WhatsApp Image 2026-06-05 at 2.56.39 PM.jpeg"><h3>Archana</h3><p>Sister</p></div>
+                <div class="member"><img src="WhatsApp Image 2026-06-05 at 2.32.56 PM.jpeg"><h3>Sayali</h3><p>Sister</p></div>
+                <div class="member"><img src="WhatsApp Image 2026-06-05 at 4.32.41 PM.jpeg"><h3>Vedanti</h3><p>Sister</p></div>
+                <div class="member"><img src="IMG_20260305_120308731_PORTRAIT.jpg"><h3>Atharva</h3><p>Brother</p></div>
+                <div class="member"><img src="WhatsApp Image 2026-06-05 at 2.55.16 PM.jpeg"><h3>Apurva</h3><p>Sister</p></div>
+                <div class="member"><img src="WhatsApp Image 2026-06-05 at 3.24.11 PM (1).jpeg"><h3>Rucha</h3><p>Sister</p></div>
+                <div class="member"><img src="WhatsApp Image 2026-06-05 at 3.01.04 PM.jpeg"><h3>Arya</h3><p>Sister</p></div>
+                <div class="member"><img src="WhatsApp Image 2026-06-05 at 3.25.29 PM.jpeg"><h3>Ananya</h3><p>Sister</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section venue-section">
+  <div class="venue-inner">
+    <span class="sec-label">आम्हाली येथे भेटा</span>
+    <h2 class="sec-title">स्थळ</h2>
+
+    <div class="venue-card reveal-on-scroll">
+      <p class="event-icon">📍</p>
+      <p class="venue-name">श्रद्धा मंगल कार्यालय</p>
+      <p class="venue-address">स्थळापर्यंत पोहोचण्यासाठी<br>खालील नकाशा बटणावर क्लिक करा</p>
+      <div class="ornament-line"><div class="ornament-diamond"></div></div>
+      <a class="cta-btn" href="https://maps.app.goo.gl/s19zrMeUSHVwSTR9A?g_st=ac" target="_blank">📍 नकाशात उघडा</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-names">प्रेषक <br>समस्त आदुडे परिवार</p>
+  <span class="footer-heart">❤️</span>
+  <p class="footer-date">०४ जुलै २०२६ · १२:४३ दुपार</p>
+  <p style="margin-top:18px;font-size:.9rem;font-style:italic;color:rgba(255,249,232,.4)">"दोन जीव, एक सुंदर नाते"</p>
+</footer>
+
+<script>
+const petalEmojis = ['🌸','🌺','🌼','🍂','✿','❀'];
+const music = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-btn');
+
+function spawnPetal() {
+  const p = document.createElement('div');
+  p.className = 'petal';
+  p.textContent = petalEmojis[Math.floor(Math.random() * petalEmojis.length)];
+  p.style.left = Math.random() * 100 + 'vw';
+  p.style.animationDuration = 6 + Math.random() * 8 + 's';
+  p.style.animationDelay = Math.random() * 4 + 's';
+  p.style.fontSize = 12 + Math.random() * 16 + 'px';
+  document.getElementById('petal-layer').appendChild(p);
+  setTimeout(() => p.remove(), 14000);
+}
+setInterval(spawnPetal, 600);
+
+// दार उघडण्याचे आणि म्युझिक चालू करण्याचे फंक्शन
+function openDoors() {
+  document.getElementById('dl').classList.add('open');
+  document.getElementById('dr').classList.add('open');
+
+  // संगीत प्ले करणे
+  music.play().then(() => {
+    musicBtn.style.display = 'flex'; // गाणे यशस्वीरित्या सुरू झाल्यावर कंट्रोल बटण दाखवा
+  }).catch((error) => {
+    console.log("Autoplay ला परवानगी मिळाली नाही: ", error);
+  });
+
+  setTimeout(() => {
+    const wrap = document.getElementById('door-wrap');
+    wrap.style.transition = 'opacity 0.6s';
+    wrap.style.opacity = '0';
+    setTimeout(() => wrap.style.display = 'none', 650);
+  }, 1500);
+}
+
+// संगीत चालू / बंद (Toggle) करण्याचे फंक्शन
+function toggleMusic() {
+  if (music.paused) {
+    music.play();
+    musicBtn.textContent = '🎵';
+  } else {
+    music.pause();
+    musicBtn.textContent = '🔇';
+  }
+}
+
+const target = new Date('July 04, 2026 12:43:00').getTime();
+const els = {
+  days: document.getElementById('days'),
+  hours: document.getElementById('hours'),
+  minutes: document.getElementById('minutes'),
+  seconds: document.getElementById('seconds')
+};
+
+function pad(n) { return String(n).padStart(2, '0'); }
+
+function tick() {
+  const now = Date.now();
+  const diff = Math.max(0, target - now);
+  els.days.textContent = pad(Math.floor(diff / 86400000));
+  els.hours.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+  els.minutes.textContent = pad(Math.floor((diff % 3600000) / 60000));
+  els.seconds.textContent = pad(Math.floor((diff % 60000) / 1000));
+}
+tick();
+setInterval(tick, 1000);
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
